@@ -16,18 +16,28 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+   <button @click="onClick">Click!</button>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'app',
+<script lang='ts'>
+import Vue from 'vue';
+import { Component } from 'vue-property-decorator';
+
+@Component({})
+export default class MyApp extends Vue {
+  name: string = 'app';
+  message: string = 'testing';
+
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
     }
   }
-}
+  onClick() : void {
+    window.alert(this.message);
+  }
+};
 </script>
 
 <style lang="scss">

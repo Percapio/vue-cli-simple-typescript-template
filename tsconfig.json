@@ -12,6 +12,8 @@
     "moduleResolution": "node",
     "target": "es5",
     "sourceMap": true,
+    "strict": true,
+    "module": "es2015"
     // "emitDecoratorMetadata": true,
     // "experimentalDecorators": true,
     // "allowSyntheticDefaultImports": true,

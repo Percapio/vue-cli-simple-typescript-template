@@ -1,9 +1,8 @@
 <template>
   <div id="index">
     <img :src='image'/>
-    <h2 v-if='!backEnd'>{{ msg }}</h2>
+    <h2>{{ msg }}</h2>
     <button @click="onClick">Click!</button>
-    <div v-if="this.backEnd">Hi</div>
 
     <ul v-if='backEnd'>
       <li v-for='d in data'>
@@ -34,7 +33,14 @@ export default class Index extends Vue {
   mounted() {}
 
   onClick() : void {
-    Controllers.grabData( this.toIndex.bind(this) );
+    this.msg = this.backEnd ? 'Populate data?' : 'Data populated';
+    this.hasData();
+  }
+
+  hasData() {
+    this.data.length > 0 
+      ? this.backEnd = !this.backEnd 
+      : Controllers.grabData( this.toIndex.bind(this) );
   }
 
   toIndex(res : any) : void {

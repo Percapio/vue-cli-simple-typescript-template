@@ -6,7 +6,7 @@
       "es2015"
     ],
     "moduleResolution": "node",
-    "target": "es5",
+    "target": "ES2015",
     "sourceMap": true,
     "strict": true,
     "module": "es2015",
